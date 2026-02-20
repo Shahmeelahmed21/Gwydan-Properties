@@ -8,15 +8,15 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import BeforeAfterSlider from "@/components/before-after-slider"
 
+type PageProps = {
+  params: Promise<{ slug: string }>
+}
+
 export async function generateStaticParams() {
   return getAllSlugs().map((slug: string) => ({ slug }))
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params
   const project = getProjectBySlug(slug)
   if (!project) return { title: "Project Not Found" }
@@ -26,17 +26,13 @@ export async function generateMetadata({
   }
 }
 
-export default async function ProjectDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
+export default async function ProjectDetailPage({ params }: PageProps) {
   const { slug } = await params
   const project = getProjectBySlug(slug)
   if (!project) notFound()
 
-  const beforeAfterPairs: typeof project.beforeAfterPairs =
-    (project.beforeAfterPairs ?? []).length > 0
+  const beforeAfterPairs =
+    project.beforeAfterPairs?.length > 0
       ? project.beforeAfterPairs
       : [
           {
@@ -81,7 +77,7 @@ export default async function ProjectDetailPage({
       name: "Gwydan Properties Ltd",
     },
     datePublished: `${project.year}-01-01`,
-    image: project.afterImages[0],
+    image: project.afterImages?.[0] || project.beforeImages?.[0],
   }
 
   return (
@@ -137,7 +133,7 @@ export default async function ProjectDetailPage({
             Before & After
           </h2>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {(beforeAfterPairs ?? []).map((pair: any) => (
+            {beforeAfterPairs.map((pair: any) => (
               <div key={pair.label}>
                 <p className="mb-3 text-sm font-medium text-muted-foreground">
                   {pair.label}
@@ -162,11 +158,71 @@ export default async function ProjectDetailPage({
             {project.highlights.map((h: string) => (
               <li key={h} className="flex items-start gap-3">
                 <CheckCircle2 className="h-5 w-5 shrink-0 text-accent-blue mt-0.5" />
-                <span className="text-sm text-foreground/90 leading-relaxed">{h}</span>
+                <span className="text-sm text-foreground/90 leading-relaxed">
+                  {h}
+                </span>
               </li>
             ))}
           </ul>
         </div>
+
+        {/* Case study */}
+        {project.caseStudy && (
+          <div className="mx-auto max-w-5xl px-6 mb-16">
+            <h2 className="font-serif text-2xl font-semibold text-foreground mb-6">
+              The Story Behind the Transformation
+            </h2>
+
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+              <div className="rounded-2xl border border-border bg-card p-6">
+                <h3 className="text-sm font-semibold text-foreground">The Challenge</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  {project.caseStudy.challenge}
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-border bg-card p-6">
+                <h3 className="text-sm font-semibold text-foreground">
+                  The Transformation
+                </h3>
+                <ul className="mt-3 space-y-3 text-sm text-muted-foreground">
+                  {project.caseStudy.transformation?.structural && (
+                    <li>
+                      <span className="font-semibold text-foreground">Structural:</span>{" "}
+                      {project.caseStudy.transformation.structural}
+                    </li>
+                  )}
+                  {project.caseStudy.transformation?.aesthetics && (
+                    <li>
+                      <span className="font-semibold text-foreground">Aesthetics:</span>{" "}
+                      {project.caseStudy.transformation.aesthetics}
+                    </li>
+                  )}
+                  {project.caseStudy.transformation?.exterior && (
+                    <li>
+                      <span className="font-semibold text-foreground">Exterior:</span>{" "}
+                      {project.caseStudy.transformation.exterior}
+                    </li>
+                  )}
+                </ul>
+              </div>
+
+              <div className="rounded-2xl border border-border bg-card p-6">
+                <h3 className="text-sm font-semibold text-foreground">The Result</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  {project.caseStudy.result}
+                </p>
+                {project.caseStudy.quote && (
+                  <blockquote className="mt-4 rounded-2xl border border-border bg-secondary p-4">
+                    <p className="text-sm text-foreground/90 leading-relaxed">
+                      “{project.caseStudy.quote}”
+                    </p>
+                  </blockquote>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Gallery */}
         <div className="mx-auto max-w-5xl px-6 mb-16">
@@ -175,26 +231,6 @@ export default async function ProjectDetailPage({
           </h2>
 
           <h3 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
-            After
-          </h3>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {project.afterImages.map((img: string, i: number) => (
-              <div
-                key={`after-${img}-${i}`}
-                className="relative aspect-[3/4] overflow-hidden rounded-lg border border-border"
-              >
-                <Image
-                  src={img || "/placeholder.svg"}
-                  alt={`${project.title} after renovation ${i + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-            ))}
-          </div>
-
-          <h3 className="mt-10 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
             Before
           </h3>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
@@ -213,6 +249,26 @@ export default async function ProjectDetailPage({
               </div>
             ))}
           </div>
+
+          <h3 className="mt-10 text-sm font-semibold uppercase tracking-widest text-muted-foreground mb-4">
+            After
+          </h3>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {project.afterImages.map((img: string, i: number) => (
+              <div
+                key={`after-${img}-${i}`}
+                className="relative aspect-[3/4] overflow-hidden rounded-lg border border-border"
+              >
+                <Image
+                  src={img || "/placeholder.svg"}
+                  alt={`${project.title} after renovation ${i + 1}`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* CTA */}
@@ -222,7 +278,8 @@ export default async function ProjectDetailPage({
               Interested in What We Do?
             </h2>
             <p className="mt-3 text-muted-foreground max-w-md mx-auto">
-              Get in touch to discuss investment opportunities or learn more about our renovation process.
+              Get in touch to discuss investment opportunities or learn more about our
+              renovation process.
             </p>
             <Link
               href="/contact"

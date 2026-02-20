@@ -1,159 +1,145 @@
 export const projects = [
   {
+    slug: "horsham-one-bed-apartment-01",
+    title: "Horsham 1‑Bed Apartment Refurbishment",
+    area: "Horsham",
+    county: "West Sussex",
+    year: 2025,
+    type: "1 Bed Apartment Refurb",
+    propertyType: "1‑Bed Apartment",
+    keyRefurbishment: "Kitchen, bathroom & bedroom refurbishment",
+    status: "SOLD",
+    summary:
+      "A full refurbishment of a one‑bed apartment including a new kitchen, upgraded bathroom and a refreshed bedroom — finished with clean contemporary details and built‑in storage.",
+    tags: ["Horsham", "Full Refurb", "Kitchen", "Bathroom", "Bedroom"],
+    highlights: [
+      "New fitted kitchen with modern cabinetry, worktops and integrated appliances",
+      "Bathroom upgrade with contemporary sanitaryware, tiling and black fixtures",
+      "Bedroom refresh with fitted storage and a clean, neutral finish",
+      "Updated lighting and finishing details for a premium feel",
+      "Move‑in‑ready presentation for resale",
+    ],
+    beforeImages: [
+      "/projects/horsham-one-bed-apartment-01/before/kitchen-before-1.jpg",
+      "/projects/horsham-one-bed-apartment-01/before/bathroom-before-1.jpg",
+      "/projects/horsham-one-bed-apartment-01/before/bedroom-before-1.jpg",
+    ],
+    afterImages: [
+      "/projects/horsham-one-bed-apartment-01/after/kitchen-after-1.jpg",
+      "/projects/horsham-one-bed-apartment-01/after/bathroom-after-1.jpg",
+      "/projects/horsham-one-bed-apartment-01/after/bedroom-after-1.jpg",
+    ],
+    beforeAfterPairs: [
+      {
+        label: "Kitchen refurbishment",
+        before: "/projects/horsham-one-bed-apartment-01/before/kitchen-before-1.jpg",
+        after: "/projects/horsham-one-bed-apartment-01/after/kitchen-after-1.jpg",
+      },
+      {
+        label: "Bathroom upgrade",
+        before: "/projects/horsham-one-bed-apartment-01/before/bathroom-before-1.jpg",
+        after: "/projects/horsham-one-bed-apartment-01/after/bathroom-after-1.jpg",
+      },
+      {
+        label: "Bedroom refresh",
+        before: "/projects/horsham-one-bed-apartment-01/before/bedroom-before-1.jpg",
+        after: "/projects/horsham-one-bed-apartment-01/after/bedroom-after-1.jpg",
+      },
+    ],
+
+    // Optional “case study” content used on the Projects page + Project detail page.
+    caseStudy: {
+      challenge:
+        "A dated one‑bed apartment that needed a full modern refresh — tired finishes, a worn kitchen and an outdated bathroom. The goal was to create a bright, contemporary space ready for resale.",
+      transformation: {
+        structural:
+          "Targeted improvements to maximise usable space and add practical storage solutions.",
+        aesthetics:
+          "Installed a modern fitted kitchen, upgraded the bathroom with contemporary fixtures, refreshed the bedroom, and finished with clean neutral tones and energy‑efficient lighting.",
+        exterior:
+          "Apartment refurbishment focused on the interior — refreshed presentation for market-ready kerb appeal through photography and staging.",
+      },
+      result:
+        "A revitalised, move‑in‑ready apartment with a premium finish that photographs beautifully and appeals to modern buyers.",
+      quote:
+        "At Gwydan, we don't just cover up problems; we strip properties back to their bones to ensure the next owner has total peace of mind.",
+    },
+  },
+
+  {
     slug: "goring-full-refurb-01",
-    title: "Victorian Terrace Full Renovation",
+    title: "Goring-by-Sea Refurbishment",
     area: "Goring-by-Sea",
     county: "West Sussex",
     year: 2024,
     type: "Full Refurbishment",
+    propertyType: "Residential Home",
+    keyRefurbishment: "Kitchen, bathroom, bedroom & hallway refresh",
+    status: "SOLD",
     summary:
-      "A full refurbishment with a focus on clean, modern finishes and timeless details — refreshed living spaces, upgraded bathroom, and a complete redecoration to bring the home back to life.",
-    tags: ["Goring", "Full Refurb", "Kitchen", "Bathroom"],
+      "A targeted refurbishment bringing key spaces back to a clean, modern standard — updated kitchen and bathroom, refreshed bedroom, and improved hallway presentation with contemporary finishes.",
+    tags: ["Goring", "Full Refurb", "Kitchen", "Bathroom", "Bedroom", "Hallway"],
     highlights: [
-      "Full redecoration with a modern neutral palette",
-      "New flooring and refreshed living areas",
-      "Bathroom upgrade with contemporary finishes",
-      "Updated lighting, doors, and ironmongery",
-      "Careful detailing to create a premium feel",
+      "Kitchen refresh with updated cabinetry, worktops and modern lighting",
+      "Bathroom upgrade with contemporary tiling, fixtures and a clean finish",
+      "Bedroom refresh with neutral tones and improved lighting",
+      "Hallway repaint and finishing touches for a brighter first impression",
+      "Careful detailing to create a premium, move‑in‑ready feel",
     ],
-    // Local project images (stored in /public/projects/...)
     beforeImages: [
-      "/projects/goring-full-refurb-01/before/room-before-1.jpg",
+      "/projects/goring-full-refurb-01/before/kitchen-before-1.jpg",
       "/projects/goring-full-refurb-01/before/bathroom-before-1.jpg",
       "/projects/goring-full-refurb-01/before/bathroom-before-2.jpg",
-      "/projects/goring-full-refurb-01/before/kitchen-before-1.jpg",
-      "/projects/goring-full-refurb-01/before/kitchen-before-2.jpg",
-      "/projects/goring-full-refurb-01/before/kitchen-before-3.jpg",
-      "/projects/goring-full-refurb-01/before/kitchen-before-4.jpg",
+      "/projects/goring-full-refurb-01/before/bedroom-before-1.jpg",
+      "/projects/goring-full-refurb-01/before/hallway-before-1.jpg",
     ],
     afterImages: [
-      "/projects/goring-full-refurb-01/after/living-after-1.jpg",
-      "/projects/goring-full-refurb-01/after/room-after-2.jpg",
-      "/projects/goring-full-refurb-01/after/room-after-1.jpg",
+      // First image is used as the project cover on the Projects grid
+      "/projects/goring-full-refurb-01/after/bedroom-after-1.jpg",
+      "/projects/goring-full-refurb-01/after/kitchen-after-1.jpg",
       "/projects/goring-full-refurb-01/after/bathroom-after-1.jpg",
       "/projects/goring-full-refurb-01/after/bathroom-after-2.jpg",
-      "/projects/goring-full-refurb-01/after/bathroom-after-3.jpg",
-      "/projects/goring-full-refurb-01/after/kitchen-after-1.jpg",
+      "/projects/goring-full-refurb-01/after/hallway-after-1.jpg",
     ],
-
-    // Used by the Project detail page to render multiple comparison sliders.
-    beforeAfterPairs: [
-      {
-        label: "Living space refresh",
-        before: "/projects/goring-full-refurb-01/before/room-before-1.jpg",
-        after: "/projects/goring-full-refurb-01/after/room-after-1.jpg",
-      },
-      {
-        label: "Bathroom upgrade",
-        before: "/projects/goring-full-refurb-01/before/bathroom-before-2.jpg",
-        after: "/projects/goring-full-refurb-01/after/bathroom-after-2.jpg",
-      },
-      {
-        label: "Kitchen modernisation",
-        before: "/projects/goring-full-refurb-01/before/kitchen-before-2.jpg",
-        after: "/projects/goring-full-refurb-01/after/kitchen-after-1.jpg",
-      },
-    ],
-  },
-  {
-    slug: "sussex-modern-refresh-02",
-    title: "Modern Home Refresh",
-    area: "Sussex",
-    county: "West Sussex",
-    year: 2024,
-    type: "Kitchen & Bathroom Refresh",
-    summary:
-      "A clean, modern refresh focused on the kitchen and bathroom — updated finishes, improved lighting, and a brighter, more inviting feel throughout.",
-    tags: ["Sussex", "Refresh", "Kitchen", "Bathroom"],
-    highlights: [
-      "Kitchen refresh with new worktops, splashback and finishing details",
-      "Bathroom renovation with modern fixtures and clean, contemporary tiling",
-      "Fresh paintwork and lighting to lift the space",
-      "Improved presentation ready for sale",
-    ],
-
-    // Local project images (stored in /public/projects/...)
-    beforeImages: [
-      "/projects/sussex-modern-refresh-02/before/kitchen-before-1.jpg",
-      "/projects/sussex-modern-refresh-02/before/kitchen-before-2.jpg",
-      "/projects/sussex-modern-refresh-02/before/kitchen-before-3.jpg",
-      "/projects/sussex-modern-refresh-02/before/bathroom-before-1.jpg",
-      "/projects/sussex-modern-refresh-02/before/bathroom-before-2.jpg",
-      "/projects/sussex-modern-refresh-02/before/staircase-before-1.jpg",
-      "/projects/sussex-modern-refresh-02/before/storage-before-1.jpg",
-    ],
-    afterImages: [
-      "/projects/sussex-modern-refresh-02/after/living-after-1.jpg",
-      "/projects/sussex-modern-refresh-02/after/kitchen-after-1.jpg",
-      "/projects/sussex-modern-refresh-02/after/bathroom-after-1.jpg",
-      "/projects/sussex-modern-refresh-02/after/bathroom-after-2.jpg",
-    ],
-
-    // Used by the Project detail page to render multiple comparison sliders.
     beforeAfterPairs: [
       {
         label: "Kitchen refresh",
-        before: "/projects/sussex-modern-refresh-02/before/kitchen-before-1.jpg",
-        after: "/projects/sussex-modern-refresh-02/after/kitchen-after-1.jpg",
+        before: "/projects/goring-full-refurb-01/before/kitchen-before-1.jpg",
+        after: "/projects/goring-full-refurb-01/after/kitchen-after-1.jpg",
       },
       {
-        label: "Bathroom renovation",
-        before: "/projects/sussex-modern-refresh-02/before/bathroom-before-1.jpg",
-        after: "/projects/sussex-modern-refresh-02/after/bathroom-after-1.jpg",
+        label: "Bathroom upgrade",
+        before: "/projects/goring-full-refurb-01/before/bathroom-before-1.jpg",
+        after: "/projects/goring-full-refurb-01/after/bathroom-after-1.jpg",
+      },
+      {
+        label: "Bedroom refresh",
+        before: "/projects/goring-full-refurb-01/before/bedroom-before-1.jpg",
+        after: "/projects/goring-full-refurb-01/after/bedroom-after-1.jpg",
+      },
+      {
+        label: "Hallway presentation",
+        before: "/projects/goring-full-refurb-01/before/hallway-before-1.jpg",
+        after: "/projects/goring-full-refurb-01/after/hallway-after-1.jpg",
       },
     ],
-  },
-  {
-    slug: "worthing-coastal-refresh-01",
-    title: "Coastal Apartment Refresh",
-    area: "Worthing",
-    county: "West Sussex",
-    year: 2024,
-    type: "Refresh & Restyle",
-    summary:
-      "A light-touch renovation that breathed new life into a dated seafront apartment. Neutral tones, clever storage solutions, and coastal-inspired styling created a bright, inviting space.",
-    tags: ["Worthing", "Refresh", "Bathroom", "Styling"],
-    highlights: [
-      "Complete bathroom refit with walk-in shower",
-      "New engineered oak flooring throughout",
-      "Full interior repaint in contemporary palette",
-      "Professional staging with coastal-inspired styling",
-      "Updated lighting scheme with dimmable LEDs",
-    ],
-    beforeImages: [
-      "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1400&q=80",
-    ],
-    afterImages: [
-      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=1400&q=80",
-    ],
-  },
-  {
-    slug: "sussex-kitchen-transformation-01",
-    title: "Period Home Kitchen Transformation",
-    area: "Sussex",
-    county: "West Sussex",
-    year: 2023,
-    type: "Kitchen Renovation",
-    summary:
-      "A dated galley kitchen was knocked through into the dining room to create a show-stopping open-plan kitchen-diner. The heart of this period home was completely reimagined.",
-    tags: ["Sussex", "Kitchen", "Full Refurb"],
-    highlights: [
-      "Walls removed to create open-plan living",
-      "Handleless kitchen with integrated appliances",
-      "Bi-fold doors opening onto the garden",
-      "Feature island with breakfast bar seating",
-      "Herringbone porcelain floor tiles",
-    ],
-    beforeImages: [
-      "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1505691723518-36a5ac3b2c2c?auto=format&fit=crop&w=1400&q=80",
-    ],
-    afterImages: [
-      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=1400&q=80",
-    ],
+
+    caseStudy: {
+      challenge:
+        "A tired home that needed modernisation across key rooms — dated finishes, uneven lighting and a lack of cohesive presentation. The aim was a clean, contemporary refresh ready for resale.",
+      transformation: {
+        structural:
+          "Targeted internal upgrades across kitchen, bathroom, bedroom and hallway to improve everyday function and flow.",
+        aesthetics:
+          "Neutral contemporary palette, updated fixtures and fittings, refreshed surfaces, and modern lighting to lift each space.",
+        exterior:
+          "Focused primarily on the interior; final presentation and photography to showcase the home at its best.",
+      },
+      result:
+        "A revitalised, move‑in‑ready home with a premium feel — clean lines, modern finishes and a strong first impression for buyers.",
+      quote:
+        "At Gwydan, we don't just cover up problems; we strip properties back to their bones to ensure the next owner has total peace of mind.",
+    },
   },
 ]
 

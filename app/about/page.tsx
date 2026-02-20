@@ -1,37 +1,50 @@
-import type { Metadata } from "next"
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight, Target, Award, Heart } from "lucide-react"
-import Header from "@/components/header"
-import Footer from "@/components/footer"
-import SectionHeading from "@/components/section-heading"
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowRight, Building2, Hammer, Home, CheckCircle2, MapPin } from "lucide-react";
+
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import SectionHeading from "@/components/section-heading";
 
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Gwydan Properties Ltd. We specialise in premium property renovations across Goring-by-Sea, Worthing and Sussex.",
-}
+    "Gwydan Properties Ltd specialises in the acquisition and high-end refurbishment of residential properties across West Sussex and surrounding counties.",
+};
 
-const values = [
+const whatWeDo = [
   {
-    icon: Target,
-    title: "Precision",
+    icon: Building2,
+    title: "Property Acquisition",
     description:
-      "Every project is meticulously planned and executed. We sweat the details so the finished home speaks for itself.",
+      "We buy properties throughout West Sussex and the surrounding counties. Whether it’s a house in need of modernisation, a probate property, or a project that’s seen better days, we offer a straightforward, professional exit for sellers.",
   },
   {
-    icon: Award,
-    title: "Quality",
+    icon: Hammer,
+    title: "Expert Refurbishment",
     description:
-      "We use premium materials and work with trusted tradespeople. There are no shortcuts in a Gwydan renovation.",
+      "Our team focuses on quality craftsmanship. We don’t just “flip” houses; we restore them. From structural upgrades to bespoke interior design, we ensure every Gwydan home meets the highest standards.",
   },
   {
-    icon: Heart,
-    title: "Care",
+    icon: Home,
+    title: "Exceptional Resales",
     description:
-      "We treat every property as if it were our own home. The result is spaces that people genuinely love to live in.",
+      "We bring revitalised homes back to the market, providing move-in-ready properties for families, professionals, and first-time buyers.",
   },
-]
+];
+
+const whyUs = [
+  "Local Expertise: Deep knowledge of the West Sussex, Surrey, and Hampshire property markets.",
+  "Transparency: A fair, efficient process whether you are selling to us or buying from us.",
+  "Quality First: We pride ourselves on attention to detail and a finish that lasts.",
+];
+
+const areas = [
+  "Chichester, Horsham, and Worthing",
+  "East Sussex",
+  "Surrey & Hampshire borders",
+];
 
 export default function AboutPage() {
   return (
@@ -39,79 +52,79 @@ export default function AboutPage() {
       <Header />
       <main className="pt-28 pb-24">
         {/* Hero */}
-        <section className="px-6 mb-20">
+        <section className="px-6 mb-16">
           <div className="mx-auto max-w-7xl grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-accent-blue mb-3">
-                About Us
+              <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground mb-3">
+                Gwydan Properties Ltd
               </p>
+
               <h1 className="font-serif text-3xl font-bold text-foreground md:text-5xl text-balance leading-tight">
-                Transforming Sussex Homes with Quality and Purpose
+                Restoring Potential, Renewing Communities.
               </h1>
+
               <p className="mt-6 text-muted-foreground leading-relaxed">
-                Gwydan Properties Ltd is a Sussex-based property renovation
-                company. We buy homes with untapped potential, renovate them to
-                the highest standard, and present them beautifully for sale.
+                <span className="font-semibold text-foreground">Who We Are</span>
+                <br />
+                Based in the heart of West Sussex, Gwydan Properties Ltd specializes in the strategic acquisition and
+                high-end refurbishment of residential properties. We take homes with untapped potential and transform
+                them into modern, beautiful living spaces designed for the contemporary buyer.
               </p>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                Operating primarily in Goring-by-Sea and Worthing, we focus on
-                creating homes that combine contemporary living with the
-                character and charm these coastal communities are known for.
-                Every renovation is an opportunity to add real value, both to the
-                property and to the neighbourhood.
-              </p>
-              <Link
-                href="/contact"
-                className="mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-accent-blue px-6 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-accent-blue/90 hover:shadow-lg hover:shadow-accent-blue/20"
-              >
-                Get in Touch
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  href="/projects"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl bg-foreground px-6 py-3 text-sm font-semibold text-background transition hover:opacity-90"
+                >
+                  View Projects <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
+                >
+                  Get In Touch <ArrowRight className="h-4 w-4" />
+                </Link>
+              </div>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border">
-              <Image
-                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80"
-                alt="Beautifully renovated Sussex interior"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+
+            <div className="relative overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+              <div className="relative aspect-[4/3] w-full">
+                <Image
+                  src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1400&q=80"
+                  alt="Renovated interior"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Mission */}
-        <section className="py-20 px-6 bg-secondary">
-          <div className="mx-auto max-w-4xl text-center">
-            <SectionHeading
-              label="Our Mission"
-              title="Adding Value Through Renovation"
-              description="We believe that great design and quality craftsmanship can transform not just a property, but an entire street. Our mission is to unlock the potential in every home we touch."
-            />
-          </div>
-        </section>
-
-        {/* Values */}
-        <section className="py-24 px-6">
+        {/* What we do */}
+        <section className="px-6 py-20 bg-secondary">
           <div className="mx-auto max-w-7xl">
             <SectionHeading
-              label="What Drives Us"
-              title="Our Values"
+              label="What We Do"
+              title="Acquisition. Refurbishment. Resale."
+              description="We operate end-to-end — from identifying opportunity to delivering a finished home that’s ready for the market."
             />
+
             <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
-              {values.map((value) => (
+              {whatWeDo.map((item) => (
                 <div
-                  key={value.title}
-                  className="rounded-lg border border-border bg-card p-8 transition-all hover:border-accent-blue/40"
+                  key={item.title}
+                  className="rounded-2xl border border-border bg-card p-8 shadow-sm transition hover:shadow-md"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-md bg-accent-blue/10 text-accent-blue">
-                    <value.icon className="h-6 w-6" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-foreground">
+                    <item.icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-5 font-serif text-xl font-semibold text-foreground">
-                    {value.title}
+                    {item.title}
                   </h3>
                   <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
-                    {value.description}
+                    {item.description}
                   </p>
                 </div>
               ))}
@@ -119,26 +132,89 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="px-6">
-          <div className="mx-auto max-w-3xl text-center rounded-lg border border-border bg-secondary p-12">
+        {/* Why work with us */}
+        <section className="px-6 py-20">
+          <div className="mx-auto max-w-7xl grid grid-cols-1 gap-10 lg:grid-cols-3">
+            <div className="lg:col-span-1">
+              <SectionHeading
+                label="Why Work With Us?"
+                title="Quality-led, local-first."
+                description="A trusted, straightforward approach — with craftsmanship that lasts."
+              />
+            </div>
+
+            <div className="lg:col-span-2 rounded-2xl border border-border bg-card p-8 shadow-sm">
+              <blockquote className="rounded-2xl border border-border bg-secondary p-6 text-foreground">
+                <p className="font-serif text-xl leading-relaxed">
+                  “Our mission is simple: To add value to the local landscape by breathing new life into every property we touch.”
+                </p>
+              </blockquote>
+
+              <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                {whyUs.map((line) => (
+                  <li key={line} className="flex items-start gap-3">
+                    <CheckCircle2 className="h-5 w-5 text-foreground mt-0.5" />
+                    <span className="text-sm text-muted-foreground leading-relaxed">{line}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Areas */}
+        <section className="px-6 pb-8">
+          <div className="mx-auto max-w-7xl rounded-2xl border border-border bg-card p-8 shadow-sm">
             <h2 className="font-serif text-2xl font-semibold text-foreground">
-              Interested in Working Together?
+              Areas We Cover
             </h2>
-            <p className="mt-3 text-muted-foreground max-w-md mx-auto">
-              Whether you have a property to sell or want to explore investment opportunities, we are always open to a conversation.
+            <p className="mt-3 text-muted-foreground">
+              While our roots are in West Sussex, we actively look for opportunities in:
             </p>
-            <Link
-              href="/contact"
-              className="mt-6 inline-flex items-center justify-center gap-2 rounded-md bg-accent-blue px-8 py-3 text-sm font-semibold text-primary-foreground transition-all hover:bg-accent-blue/90"
-            >
-              Contact Us
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+
+            <ul className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3">
+              {areas.map((a) => (
+                <li key={a} className="flex items-start gap-3 rounded-xl border border-border bg-secondary p-4">
+                  <MapPin className="h-5 w-5 text-foreground mt-0.5" />
+                  <span className="text-sm text-foreground/90">{a}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Get in touch */}
+        <section className="px-6 mt-10">
+          <div className="mx-auto max-w-5xl rounded-2xl border border-border bg-secondary p-10 text-center">
+            <h2 className="font-serif text-2xl font-semibold text-foreground">
+              Get In Touch
+            </h2>
+            <p className="mt-3 text-muted-foreground max-w-2xl mx-auto">
+              Do you have a property to sell? Or are you looking for your next home?
+            </p>
+
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="mailto:john@gwydan.com"
+                className="inline-flex items-center justify-center rounded-xl bg-foreground px-6 py-3 text-sm font-semibold text-background transition hover:opacity-90"
+              >
+                Email: john@gwydan.com
+              </a>
+              <a
+                href="tel:+447956568626"
+                className="inline-flex items-center justify-center rounded-xl border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
+              >
+                Call: +44 7956 568626
+              </a>
+            </div>
+
+            <p className="mt-4 text-sm text-muted-foreground">
+              Office: West Sussex, United Kingdom
+            </p>
           </div>
         </section>
       </main>
       <Footer />
     </>
-  )
+  );
 }
