@@ -34,6 +34,13 @@ export default function Footer() {
                 <Phone className="h-4 w-4" />
                 +44 7956 568626
               </a>
+               <a
+                href="tel:02083371777"
+                className="inline-flex items-center gap-2 hover:text-foreground transition-colors"
+              >
+                <Phone className="h-4 w-4" />
+                02083371777
+              </a>
               <span className="inline-flex items-center gap-2">
                 <MapPin className="h-4 w-4" />
                 West Sussex, United Kingdom
@@ -70,7 +77,7 @@ export default function Footer() {
               Areas We Cover
             </h4>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-              <li>Chichester • Horsham • Worthing</li>
+              <li>West Sussex</li>
               <li>East Sussex</li>
               <li>Surrey &amp; Hampshire borders</li>
             </ul>
