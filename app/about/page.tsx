@@ -41,9 +41,8 @@ const whyUs = [
 ];
 
 const areas = [
-  "Chichester, Horsham, and Worthing",
-  "East Sussex",
-  "Surrey & Hampshire borders",
+  "West Sussex",
+  "Surrey",
 ];
 
 export default function AboutPage() {
@@ -205,6 +204,12 @@ export default function AboutPage() {
                 className="inline-flex items-center justify-center rounded-xl border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
               >
                 Call: +44 7956 568626
+              </a>
+              <a
+                href="tel:02083371777"
+                className="inline-flex items-center justify-center rounded-xl border border-border bg-background px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-secondary"
+              >
+                Call: 02083371777
               </a>
             </div>
 

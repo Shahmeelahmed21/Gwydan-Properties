@@ -78,8 +78,7 @@ export default function Footer() {
             </h4>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li>West Sussex</li>
-              <li>East Sussex</li>
-              <li>Surrey &amp; Hampshire borders</li>
+              <li>Surrey </li>
             </ul>
 
             <div className="mt-6">
